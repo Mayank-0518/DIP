@@ -1,0 +1,40 @@
+
+== Document OCR (200 synthetic ID captures; proposed = D, 0.69s/doc) ==
+        config |       acc_name |        acc_dob |      acc_id_no |     doc_all_ok |       mean_CER
+A_fullpage_raw |         0.1400 |         0.0800 |         0.0800 |         0.0300 |         0.8764
+B_canny_rect_raw |         0.0100 |         0.0100 |         0.0050 |         0.0050 |         0.9989
+C_improved_rect_raw |         0.6550 |         0.6650 |         0.6450 |         0.5850 |         0.3146
+D_improved_rect_enhanced |         0.7400 |         0.7350 |         0.7250 |         0.7100 |         0.2260
+E_oracle_rect_enhanced |         0.9950 |         1.0000 |         0.9700 |         0.9700 |         0.0024
+
+== Card localisation ==
+      detector |       mean_iou |     rate_iou90
+canny (baseline) |         0.4891 |         0.0450
+median+Lab grad+GrabCut |         0.8988 |         0.7700
+
+== Config C by capture condition ==
+        subset |              n |       det_rate |     doc_all_ok
+           all |            200 |         0.7700 |         0.7100
+         glare |             74 |         0.7027 |         0.6216
+      no glare |            126 |         0.8095 |         0.7619
+      blur>1.2 |             89 |         0.6854 |         0.6404
+      light bg |             38 |         0.5526 |         0.4211
+     gate pass |            136 |         0.7868 |         0.7206
+   gate reject |             64 |         0.7344 |         0.6875
+FAIL id_0003.jpg {'id_no': ('MPHS537270', 'MPH537270')} iou=0.99
+FAIL id_0005.jpg {'name': ('BS', 'POOJA KAPOOR'), 'dob': ('', '23/04/1998'), 'id_no': ('BS', 'XFP326454')} iou=0.45
+FAIL id_0008.jpg {'name': ('BS', 'POOJA MEHTA'), 'dob': ('', '05/11/1983'), 'id_no': ('BS', 'VJN378078')} iou=0.56
+FAIL id_0010.jpg {'name': ('SOI ENTITY CART', 'ANANYA REDDY'), 'dob': ('', '15/04/1975'), 'id_no': ('', 'XHB511109')} iou=0.52
+FAIL id_0011.jpg {'name': ('O', 'KABIR SINGH'), 'dob': ('', '25/02/1990'), 'id_no': ('', 'MXC253681')} iou=0.52
+FAIL id_0022.jpg {'name': ('', 'KAVYA NAIR'), 'dob': ('', '19/06/1994'), 'id_no': ('L YL2Z461418', 'YLZ461418')} iou=0.65
+FAIL id_0023.jpg {'name': ('', 'ROHAN KAPOOR'), 'dob': ('10', '03/05/1968'), 'id_no': ('VUAIAUTUUU', 'CXR314959')} iou=0.84
+FAIL id_0024.jpg {'name': ('', 'RAHUL NAIR'), 'dob': ('', '07/07/1957'), 'id_no': ('', 'EFM298327')} iou=0.65
+
+== Enhancement ablation (oracle corners, 100 cards) ==
+   enhancement |      field_acc
+      raw grey |         0.8967
+        + Otsu |         0.8933
+    flat-field |         0.9733
+   flat + Otsu |         0.8933
+flat + NL-means |         0.9833
+flat + bilateral + unsharp (proposed) |         0.9833

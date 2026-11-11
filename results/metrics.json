@@ -1,0 +1,337 @@
+{
+ "document": {
+  "ocr": [
+   {
+    "config": "A_fullpage_raw",
+    "acc_name": 0.14,
+    "acc_dob": 0.08,
+    "acc_id_no": 0.08,
+    "doc_all_ok": 0.03,
+    "mean_CER": 0.8763560328560328
+   },
+   {
+    "config": "B_canny_rect_raw",
+    "acc_name": 0.01,
+    "acc_dob": 0.01,
+    "acc_id_no": 0.005,
+    "doc_all_ok": 0.005,
+    "mean_CER": 0.9988918997668997
+   },
+   {
+    "config": "C_improved_rect_raw",
+    "acc_name": 0.655,
+    "acc_dob": 0.665,
+    "acc_id_no": 0.645,
+    "doc_all_ok": 0.585,
+    "mean_CER": 0.314615897990898
+   },
+   {
+    "config": "D_improved_rect_enhanced",
+    "acc_name": 0.74,
+    "acc_dob": 0.735,
+    "acc_id_no": 0.725,
+    "doc_all_ok": 0.71,
+    "mean_CER": 0.22596608946608948
+   },
+   {
+    "config": "E_oracle_rect_enhanced",
+    "acc_name": 0.995,
+    "acc_dob": 1.0,
+    "acc_id_no": 0.97,
+    "doc_all_ok": 0.97,
+    "mean_CER": 0.002373737373737374
+   }
+  ],
+  "detection": [
+   {
+    "detector": "canny (baseline)",
+    "mean_iou": 0.48908728835394116,
+    "rate_iou90": 0.045
+   },
+   {
+    "detector": "median+Lab grad+GrabCut",
+    "mean_iou": 0.8988019166263279,
+    "rate_iou90": 0.77
+   }
+  ],
+  "by_condition": [
+   {
+    "subset": "all",
+    "n": 200,
+    "det_rate": 0.77,
+    "doc_all_ok": 0.71
+   },
+   {
+    "subset": "glare",
+    "n": 74,
+    "det_rate": 0.7027027027027027,
+    "doc_all_ok": 0.6216216216216216
+   },
+   {
+    "subset": "no glare",
+    "n": 126,
+    "det_rate": 0.8095238095238095,
+    "doc_all_ok": 0.7619047619047619
+   },
+   {
+    "subset": "blur>1.2",
+    "n": 89,
+    "det_rate": 0.6853932584269663,
+    "doc_all_ok": 0.6404494382022472
+   },
+   {
+    "subset": "light bg",
+    "n": 38,
+    "det_rate": 0.5526315789473685,
+    "doc_all_ok": 0.42105263157894735
+   },
+   {
+    "subset": "gate pass",
+    "n": 136,
+    "det_rate": 0.7867647058823529,
+    "doc_all_ok": 0.7205882352941176
+   },
+   {
+    "subset": "gate reject",
+    "n": 64,
+    "det_rate": 0.734375,
+    "doc_all_ok": 0.6875
+   }
+  ]
+ },
+ "face": [
+  {
+   "matcher": "LBP",
+   "condition": "clean (upper bound)",
+   "auc": 0.6076515587990525,
+   "eer": 0.4239965431150374,
+   "tar_at_far1": 0.09247967479674797,
+   "FTA": 0.0,
+   "FAR_at_t": NaN,
+   "FRR_at_t": NaN
+  },
+  {
+   "matcher": "LBP",
+   "condition": "printed, raw",
+   "auc": 0.5426969304141861,
+   "eer": 0.45598873311567767,
+   "tar_at_far1": 0.01524390243902439,
+   "FTA": 0.007,
+   "FAR_at_t": NaN,
+   "FRR_at_t": NaN
+  },
+  {
+   "matcher": "LBP",
+   "condition": "printed, bicubic x3",
+   "auc": 0.5366788897957877,
+   "eer": 0.4804870046731963,
+   "tar_at_far1": 0.01016260162601626,
+   "FTA": 0.004,
+   "FAR_at_t": NaN,
+   "FRR_at_t": NaN
+  },
+  {
+   "matcher": "LBP",
+   "condition": "printed, CLAHE+unsharp",
+   "auc": 0.5615817649318225,
+   "eer": 0.4599897573778888,
+   "tar_at_far1": 0.02540650406504065,
+   "FTA": 0.0,
+   "FAR_at_t": NaN,
+   "FRR_at_t": NaN
+  },
+  {
+   "matcher": "LBP",
+   "condition": "printed, proposed",
+   "auc": 0.5370704900454516,
+   "eer": 0.47599385442673325,
+   "tar_at_far1": 0.016260162601626018,
+   "FTA": 0.001,
+   "FAR_at_t": NaN,
+   "FRR_at_t": NaN
+  },
+  {
+   "matcher": "SFace",
+   "condition": "clean (upper bound)",
+   "auc": 0.9968311887843287,
+   "eer": 0.00852618270277189,
+   "tar_at_far1": 0.9898373983739838,
+   "FTA": 0.0,
+   "FAR_at_t": 0.000984251968503937,
+   "FRR_at_t": 0.016260162601626018
+  },
+  {
+   "matcher": "SFace",
+   "condition": "printed, raw",
+   "auc": 0.9530519813072147,
+   "eer": 0.10499487868894436,
+   "tar_at_far1": 0.7134146341463414,
+   "FTA": 0.007,
+   "FAR_at_t": 0.0,
+   "FRR_at_t": 0.6219512195121951
+  },
+  {
+   "matcher": "SFace",
+   "condition": "printed, bicubic x3",
+   "auc": 0.9518361700595352,
+   "eer": 0.11299692721336663,
+   "tar_at_far1": 0.6727642276422764,
+   "FTA": 0.004,
+   "FAR_at_t": 0.0,
+   "FRR_at_t": 0.6300813008130082
+  },
+  {
+   "matcher": "SFace",
+   "condition": "printed, CLAHE+unsharp",
+   "auc": 0.9466433406952179,
+   "eer": 0.1304934063120159,
+   "tar_at_far1": 0.6107723577235772,
+   "FTA": 0.0,
+   "FAR_at_t": 0.0,
+   "FRR_at_t": 0.7388211382113821
+  },
+  {
+   "matcher": "SFace",
+   "condition": "printed, proposed",
+   "auc": 0.9705064496511107,
+   "eer": 0.08398950131233601,
+   "tar_at_far1": 0.7550813008130082,
+   "FTA": 0.001,
+   "FAR_at_t": 0.0,
+   "FRR_at_t": 0.5650406504065041
+  }
+ ],
+ "doc_enhancement_ablation": [
+  {
+   "enhancement": "raw grey",
+   "field_acc": 0.8966666666666666
+  },
+  {
+   "enhancement": "+ Otsu",
+   "field_acc": 0.8933333333333333
+  },
+  {
+   "enhancement": "flat-field",
+   "field_acc": 0.9733333333333334
+  },
+  {
+   "enhancement": "flat + Otsu",
+   "field_acc": 0.8933333333333333
+  },
+  {
+   "enhancement": "flat + NL-means",
+   "field_acc": 0.9833333333333333
+  },
+  {
+   "enhancement": "flat + bilateral + unsharp (proposed)",
+   "field_acc": 0.9833333333333333
+  }
+ ],
+ "liveness": [
+  {
+   "features": "grey LBP (baseline)",
+   "protocol": "intra",
+   "APCER": 0.46111111111111114,
+   "BPCER": 0.25555555555555554,
+   "ACER": 0.35833333333333334,
+   "AUC": 0.7167592592592592,
+   "EER": 0.35000000000000003
+  },
+  {
+   "features": "colour LBP (YCrCb+HSV)",
+   "protocol": "intra",
+   "APCER": 0.03888888888888889,
+   "BPCER": 0.07222222222222222,
+   "ACER": 0.05555555555555555,
+   "AUC": 0.9819753086419754,
+   "EER": 0.06666666666666665
+  },
+  {
+   "features": "FFT spectrum only",
+   "protocol": "intra",
+   "APCER": 0.45,
+   "BPCER": 0.2388888888888889,
+   "ACER": 0.34444444444444444,
+   "AUC": 0.6826234567901235,
+   "EER": 0.35555555555555557
+  },
+  {
+   "features": "colour LBP + FFT (proposed)",
+   "protocol": "intra",
+   "APCER": 0.03888888888888889,
+   "BPCER": 0.08333333333333333,
+   "ACER": 0.06111111111111111,
+   "AUC": 0.9831172839506173,
+   "EER": 0.061111111111111116
+  },
+  {
+   "features": "grey LBP (baseline)",
+   "protocol": "print->replay",
+   "APCER": 0.8426966292134831,
+   "BPCER": 0.17777777777777778,
+   "ACER": 0.5102372034956304,
+   "AUC": 0.49619225967540576,
+   "EER": 0.5083645443196005
+  },
+  {
+   "features": "colour LBP + FFT (proposed)",
+   "protocol": "print->replay",
+   "APCER": 1.0,
+   "BPCER": 0.03333333333333333,
+   "ACER": 0.5166666666666667,
+   "AUC": 0.638888888888889,
+   "EER": 0.402247191011236
+  },
+  {
+   "features": "grey LBP (baseline)",
+   "protocol": "replay->print",
+   "APCER": 0.7362637362637363,
+   "BPCER": 0.3055555555555556,
+   "ACER": 0.520909645909646,
+   "AUC": 0.5007326007326007,
+   "EER": 0.5578754578754579
+  },
+  {
+   "features": "colour LBP + FFT (proposed)",
+   "protocol": "replay->print",
+   "APCER": 1.0,
+   "BPCER": 0.027777777777777776,
+   "ACER": 0.5138888888888888,
+   "AUC": 0.7293650793650794,
+   "EER": 0.3453296703296704
+  }
+ ],
+ "fusion": {
+  "rows": [
+   {
+    "attempt": "genuine",
+    "n": 82,
+    "ACCEPT": 0.32926829268292684,
+    "REVIEW": 0.5853658536585366,
+    "REJECT": 0.08536585365853659
+   },
+   {
+    "attempt": "impostor",
+    "n": 152,
+    "ACCEPT": 0.013157894736842105,
+    "REVIEW": 0.09868421052631579,
+    "REJECT": 0.8881578947368421
+   },
+   {
+    "attempt": "spoof",
+    "n": 66,
+    "ACCEPT": 0.015151515151515152,
+    "REVIEW": 0.09090909090909091,
+    "REJECT": 0.8939393939393939
+   }
+  ],
+  "sec_per_verification": 0.8134061098098755
+ },
+ "calibration": {
+  "accept": 0.23316208563991903,
+  "reject": 0.16252728331626712,
+  "n": 480,
+  "n_genuine": 248,
+  "failed_to_acquire": 20
+ }
+}

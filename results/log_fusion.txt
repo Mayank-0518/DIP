@@ -1,0 +1,6 @@
+
+== End-to-end decisions (mean 0.81s/verification) ==
+       attempt |              n |         ACCEPT |         REVIEW |         REJECT
+       genuine |             82 |         0.3293 |         0.5854 |         0.0854
+      impostor |            152 |         0.0132 |         0.0987 |         0.8882
+         spoof |             66 |         0.0152 |         0.0909 |         0.8939
