@@ -5,3 +5,4 @@ pillow==11.3.0
 pytesseract==0.3.13
 scikit-image==0.24.0
 scikit-learn==1.6.1
+streamlit==1.50.0

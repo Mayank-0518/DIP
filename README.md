@@ -12,7 +12,8 @@ brew install tesseract                      # OCR engine (any Tesseract >= 5)
 # models/yunet.onnx, models/sface.onnx: OpenCV Zoo (face_detection_yunet_2023mar, face_recognition_sface_2021dec)
 .venv/bin/python make_data.py               # synthetic ID captures + print/replay spoofs (needs LFW via scikit-learn)
 .venv/bin/python evaluate.py all            # doc, docablation, face, live, calib, fusion  -> results/
-.venv/bin/python kyc.py selfie.jpg id.jpg   # single verification -> results/demo.png
+.venv/bin/streamlit run app.py              # web demo: upload card + selfie (or webcam), see decision + all DIP stages
+.venv/bin/python kyc.py selfie.jpg id.jpg   # same, command line -> results/demo.png
 .venv/bin/python capture.py                 # optional: collect real liveness frames (with consent)
 ```
 
